@@ -1,0 +1,26 @@
+.myevents-container {
+  display: flex;
+  margin-right: 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+  border: 1px solid #159947;
+  background-color: #ffffff13;
+  flex-wrap: wrap;
+}
+
+.btn-refrech {
+  border-radius: 50px;
+  color: white;
+  width: 10%;
+  background-color: #159947;
+  border: none;
+  cursor: pointer;
+  font-size: large;
+  font-weight: 500;
+}
+.myEvents {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  align-items: center;
+}

@@ -1,0 +1,78 @@
+.eventForm-container {
+  background-color: rgba(253, 253, 253, 0.075);
+  color: white;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 2rem;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px black;
+  width: 40vw;
+  justify-self: baseline;
+  padding: 1rem 5rem;
+  margin-top: 3rem;
+  border: 1px solid #159947;
+  font-size: large;
+}
+.eventForm-container span {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  gap: 2rem;
+}
+
+.uploadImage {
+  border: 3px dashed #49b265;
+  width: 40%;
+  height: 50%;
+}
+
+.eventForm-container textarea {
+  height: 4rem;
+}
+.eventForm-container input:focus {
+  border: none;
+}
+
+.eventForm-container input,
+textarea {
+  width: 80%;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #49b265;
+  border-style: none none solid solid;
+  font-size: large;
+  border-radius: 0px 0px 0px 7px;
+  padding: 3px 33px 5px 15px;
+}
+
+.error-msg {
+  font-size: 10px;
+  color: red;
+}
+
+.event {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+.event p {
+  flex-basis: 30%;
+}
+
+.eventForm-input {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+}

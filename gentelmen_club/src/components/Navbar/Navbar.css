@@ -1,0 +1,45 @@
+.Navbar {
+  box-sizing: border-box;
+  display: flex;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 5px 5.5%;
+  justify-content: space-between;
+  color: #49b265;
+  width: 100%;
+  background-color: transparent;
+  transition: 500ms ease-in;
+  font-family: "Lobster", cursive;
+  cursor: pointer;
+}
+.Navbar:hover {
+  background-color: #05202c4f;
+  transition: 500ms ease-in;
+  box-shadow: 0px -20px 150px #1f5f5b;
+}
+.nav-right {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  font-size: 25px;
+}
+
+.nav-left {
+  display: flex;
+  justify-content: space-around;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+  font-size: 30px;
+}
+.nav-logo {
+  width: 25%;
+}
+
+@media only screen and (max-width: 1400px) {
+  .nav-left {
+    font-size: 22px;
+  }
+}

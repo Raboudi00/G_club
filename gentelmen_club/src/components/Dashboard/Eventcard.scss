@@ -1,0 +1,101 @@
+@import "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-97/variables.less";
+@import "https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/mixins.less";
+
+.Card-container {
+  $blue: #341cac;
+  display: flex;
+  margin: 0px 1rem -20px 1rem;
+  flex-flow: row wrap;
+  width: 29%;
+  gap: 1rem;
+  color: white;
+  body,
+  html {
+    font-family: "Montserrat", sans-serif;
+    background-color: $blue;
+  }
+
+  .card {
+    width: 95%;
+    display: block;
+    margin: 60px auto;
+    transition: 0.25s;
+    height: fit-content;
+
+    &:hover {
+      box-shadow: 5px 5px 50px darken(rgb(102, 187, 106), 100%);
+      cursor: pointer;
+
+      .button-primary {
+        transform: translate(20px, 0);
+      }
+    }
+  }
+
+  .card-header {
+    height: 180px;
+    width: 100%;
+    padding: 15px;
+    background-size: cover;
+    color: #fff;
+  }
+
+  .card-header--title {
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .card-body {
+    padding: 15px;
+    background-color: rgb(31, 40, 62);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .date {
+    font-size: 11px;
+    font-weight: 600;
+    color: grey;
+  }
+
+  .body-content {
+    padding-bottom: 0px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .button-primary {
+    border: none;
+    box-shadow: none;
+    font-family: inherit;
+    background-color: transparent;
+    color: #159947;
+    font-size: 15px;
+    transition: 0.25s;
+
+    i {
+      padding-right: 14px;
+    }
+  }
+
+  .designer-link {
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .fa-trash {
+    font-size: larger;
+    color: tomato;
+    transition: 150ms ease-in-out;
+  }
+  .fa-trash:hover {
+    font-size: xx-large;
+  }
+}

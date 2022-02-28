@@ -1,0 +1,35 @@
+.create-info {
+  display: flex;
+  justify-content: center;
+  width: 110%;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.705);
+  cursor: pointer;
+}
+
+.popUps {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: inherit;
+  background-color: rgba(2, 2, 2, 0.699);
+  z-index: 20;
+  margin-left: -24.5%;
+  padding-bottom: 15%;
+}
+.description {
+  text-decoration: none;
+  border-radius: 15px;
+  width: 40%;
+  height: 30%;
+  font-size: x-large;
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.315);
+  border: none;
+}
+.desc-btn {
+  width: 50%;
+}
