@@ -15,10 +15,20 @@ Router.post("/", isAuth, async (req, res) => {
   }
 });
 
-Router.get("/", isAuth, async (req, res) => {
+Router.get("/myevents", isAuth, isEvent, isMyEvent, async (req, res) => {
   try {
     const events = await Event.find({ user_id: req.user._id });
     if (!events) return res.status(404).send("no events not found");
+    res.status(200).json(events);
+  } catch (error) {
+    res.send(error);
+  }
+});
+
+Router.get("/home", isAuth, isEvent, async (req, res) => {
+  try {
+    const events = await Event.find({ public: true });
+    if (!events) return res.status(404).send("no events found");
     res.status(200).json(events);
   } catch (error) {
     res.send(error);

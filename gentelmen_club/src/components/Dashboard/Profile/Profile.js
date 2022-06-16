@@ -12,7 +12,7 @@ function Profile(props) {
 
   const update = async (name) => {
     try {
-      const userID = props.user.id;
+      const userID = user.id;
       await axios
         .patch(`/api/user/${userID}`, { info: name })
         .then((res) => setDescription(res.data.info))
@@ -21,7 +21,8 @@ function Profile(props) {
       console.log(error);
     }
   };
-  console.log(props.user);
+  //console.log(props.user);
+
   const Edit = () =>
     swal({
       text: "Be creative.",

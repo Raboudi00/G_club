@@ -29,8 +29,8 @@
 
 .uploadImage {
   border: 3px dashed #49b265;
-  width: 40%;
-  height: 50%;
+  width: 30%;
+  height: 30%;
 }
 
 .eventForm-container textarea {
@@ -42,7 +42,7 @@
 
 .eventForm-container input,
 textarea {
-  width: 80%;
+  width: 50%;
   color: white;
   background-color: transparent;
   border: 1px solid #49b265;
@@ -64,7 +64,7 @@ textarea {
   align-items: center;
 }
 .event p {
-  flex-basis: 30%;
+  flex-basis: 16%;
 }
 
 .eventForm-input {
@@ -75,4 +75,15 @@ textarea {
   justify-content: center;
   align-items: center;
   font-size: large;
+}
+
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.upload-btn {
+  color: white;
 }

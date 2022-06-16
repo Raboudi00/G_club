@@ -1,29 +1,54 @@
 import React from "react";
 import "./Eventcard.scss";
 import axios from "axios";
+import swal from 'sweetalert';
 import standardImg from "../../assets/images/home-decor-3.jpg";
 
 class CardHeader extends React.Component {
   render() {
-    const { image, date, id } = this.props;
+    const { image, date, id, customize } = this.props;
     var style = {
       backgroundImage: "url(" + image + ")",
       display: "flex",
       justifyContent: "space-between",
       alignItems: "flex-start",
     };
-
+    
     const Delete = async () => {
       await axios
         .delete(`api/event/${id}`)
-        .then(() => this.props.refrech())
+        .then(() => {
+          window.location.replace(`/dashboard/myevent`)
+          this.props.refrech()
+        })
         .catch((err) => console.log(err));
     };
+
+    const alert = () => {
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this event!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+      .then((willDelete) => {
+        if (willDelete) {
+          Delete()
+          swal("Voila! Your event has been deleted!", {
+            icon: "success",
+          });
+        } else {
+          swal("Your event is safe!");
+        }
+      });
+    }
+
 
     return (
       <header style={style} id={image} className="card-header">
         <h4 className="card-header--title">{date && date.slice(0, 10)}</h4>
-        <i className="fa-solid fa-trash" onClick={Delete}></i>
+        {customize && <i className="fa-solid fa-trash" onClick={alert}></i>}
       </header>
     );
   }
@@ -43,7 +68,7 @@ class CardBody extends React.Component {
   render() {
     return (
       <div className="card-body">
-        <p className="date">{this.props.address}</p>
+        <p className="date">{this.props.address} {this.props.city}</p>
         <hr style={{ width: "100%" }} />
 
         <h2 style={{ margin: "0px" }}>{this.props.title}</h2>
@@ -58,7 +83,7 @@ class CardBody extends React.Component {
 
 class Card extends React.Component {
   render() {
-    const { title, address, description, image, date, _id } = this.props.event;
+    const { title, address, city, description, image, date, _id } = this.props.event;
 
     return (
       <article className="card">
@@ -66,13 +91,15 @@ class Card extends React.Component {
           id={_id}
           image={typeof image === "undefined" ? standardImg : image}
           date={date}
-          refrech={() => this.props.refrech()}
+          refrech={this.props.refrech}
+          customize={this.props.customize}
         />
         <CardBody
           date={date}
           address={address}
           title={title}
           text={description}
+          city={city}
         />
       </article>
     );

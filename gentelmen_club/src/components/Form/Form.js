@@ -6,8 +6,8 @@ import axios from "axios";
 function Form(props) {
   const { register, handleSubmit } = useForm("");
 
-  const Register = async (data) => {
-    await axios
+  const Register = (data) => {
+    axios
       .post("/api/user/register", data)
       .then((res) => {
         localStorage.setItem("jwt", res.data.jwt.token);

@@ -12,7 +12,7 @@ function App() {
   const [user, setUser] = React.useState({ loadingUser: true, user: null });
   const [redirect, setRedirect] = React.useState(false);
 
-  const baseURL = "http://localhost:5000";
+  const baseURL = "http://192.168.1.19:5000";
 
   const refreshUser = () => {
     const jwt = localStorage.getItem("jwt");
@@ -49,7 +49,7 @@ function App() {
     <Routes>
       {redirect && user.user ? (
         <Route
-          path="/*"
+          path="/dashboard/*"
           exact
           element={
             <Dashboard
@@ -61,16 +61,18 @@ function App() {
         />
       ) : (
         <>
-          <Navbar />
           <Route
             path="/"
             exact
             element={
-              <Home
-                refresh={refreshUser}
-                redirect={(q) => setRedirect(q)}
-                userID={user.user ? user.user.id : ""}
-              />
+              <>
+                <Navbar />
+                <Home
+                  refresh={refreshUser}
+                  redirect={(q) => setRedirect(q)}
+                  userID={user.user ? user.user.id : ""}
+                />
+              </>
             }
           />
 
@@ -78,11 +80,14 @@ function App() {
             path="/form"
             exact
             element={
-              <Form
-                userID={user.user ? user.user.id : ""}
-                redirect={(q) => setRedirect(q)}
-                setUser={(q) => setUser(q)}
-              />
+              <>
+                <Navbar />
+                <Form
+                  userID={user.user ? user.user.id : ""}
+                  redirect={(q) => setRedirect(q)}
+                  setUser={(q) => setUser(q)}
+                />
+              </>
             }
           />
         </>

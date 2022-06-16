@@ -3,7 +3,7 @@
 .nav-container {
   display: flex;
   flex-direction: column;
-  margin: 12% 10%;
+  margin: 12% 10% 0% 10%;
   background-color: white;
   height: 93%;
   border-radius: 10px;

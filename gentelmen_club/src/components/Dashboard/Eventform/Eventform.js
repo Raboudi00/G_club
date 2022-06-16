@@ -1,23 +1,29 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import swal from "sweetalert";
+import ImageUpload from "./Upload";
 import "./Eventform.css";
 
-function Card() {
+function Card(props) {
   const { register, handleSubmit } = useForm("");
   const [err, setErr] = React.useState("");
 
-  const Register = async (data) => {
-    await axios
+  const Register = (data, e) => {
+    e.preventDefault();
+    axios
       .post("/api/event", data)
       .then((res) => {
         const msg = res.data.errors;
-        console.log(res);
         if (msg) return setErr(msg);
-        console.log("success");
+        swal("Your event has been created", {
+          icon: "success",
+        });
         setErr("");
+        e.target.reset();
+        props.refrech();
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log("error", error));
   };
 
   const ErrMsg = ({ name }) => {
@@ -26,27 +32,20 @@ function Card() {
 
   return (
     <form className="eventForm-container" onSubmit={handleSubmit(Register)}>
-      <span>
-        <img
-          src={require("../../../img/imageUpload.png")}
-          alt="broken"
-          className="uploadImage"
-        />
-        <div>
-          <input type="file" />
-          <button type="submit">Upload</button>
-        </div>
-      </span>
-      <div className="eventForm-input">
-        <p>Title:</p>
+      <ImageUpload />
 
-        <input
-          {...register("title")}
-          type="text"
-          className="event-title"
-          placeholder="Choose a title"
-        />
-        <ErrMsg name={"title"} />
+      <div className="eventForm-input">
+        <span className="event">
+          <p>Title:</p>
+
+          <input
+            {...register("title")}
+            type="text"
+            className="event-title"
+            placeholder="Choose a title"
+          />
+          <ErrMsg name={"title"} />
+        </span>
       </div>
       <div className="eventForm-input">
         <span className="event">

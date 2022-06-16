@@ -1,7 +1,10 @@
 .myevents-container {
   display: flex;
-  margin-right: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
   margin-top: 15px;
+  padding: 0rem 1rem;
   border-radius: 10px;
   border: 1px solid #159947;
   background-color: #ffffff13;
@@ -9,7 +12,7 @@
 }
 
 .btn-refrech {
-  border-radius: 50px;
+  border-radius: 5px;
   color: white;
   width: 10%;
   background-color: #159947;
@@ -17,10 +20,27 @@
   cursor: pointer;
   font-size: large;
   font-weight: 500;
+  position: absolute;
+height: 4%;
+top: 20px;
+border: 1px solid;
 }
 .myEvents {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-top: 3rem;
   align-items: center;
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
 }

@@ -1,14 +1,14 @@
 @import "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-97/variables.less";
 @import "https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/mixins.less";
 
-.Card-container {
+.Card-container, .idCard {
   $blue: #341cac;
   display: flex;
   margin: 0px 1rem -20px 1rem;
   flex-flow: row wrap;
   width: 29%;
-  gap: 1rem;
   color: white;
+  text-decoration: none;
   body,
   html {
     font-family: "Montserrat", sans-serif;
@@ -16,14 +16,15 @@
   }
 
   .card {
-    width: 95%;
-    display: block;
-    margin: 60px auto;
-    transition: 0.25s;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0px;
     height: fit-content;
+    transition: 0.25s;
 
     &:hover {
-      box-shadow: 5px 5px 50px darken(rgb(102, 187, 106), 100%);
+      box-shadow: 15px 5px 50px darken(rgb(102, 187, 106), 100%);
       cursor: pointer;
 
       .button-primary {
@@ -34,7 +35,7 @@
 
   .card-header {
     height: 180px;
-    width: 100%;
+    width: auto;
     padding: 15px;
     background-size: cover;
     color: #fff;
@@ -48,8 +49,8 @@
   .card-body {
     padding: 15px;
     background-color: rgb(31, 40, 62);
-    width: 100%;
-    height: auto;
+    width: auto;
+    
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
@@ -66,6 +67,8 @@
     padding-bottom: 0px;
     font-size: 13px;
     line-height: 1.8;
+    height: 6rem;
+    overflow: auto;
   }
 
   .button-primary {
@@ -73,7 +76,7 @@
     box-shadow: none;
     font-family: inherit;
     background-color: transparent;
-    color: #159947;
+    color: #159948;
     font-size: 15px;
     transition: 0.25s;
 
@@ -91,11 +94,43 @@
   }
 
   .fa-trash {
-    font-size: larger;
-    color: tomato;
-    transition: 150ms ease-in-out;
+
+    display: none;
   }
   .fa-trash:hover {
     font-size: xx-large;
+  }
+}
+.idCard {
+  width: 60%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: auto;
+  color: white;
+  display: absolute;
+  .card-header {
+    height: 15rem;
+    background-position: center;
+  }
+  .card-body {
+    height: 17rem;
+    justify-content: space-around;
+  }
+  .body-content {
+    height: fit-content;
+  }
+  .button-primary {
+    display: none;
+  }
+  .card:hover {
+    box-shadow: none;
+  }
+  .fa-trash {
+    font-size: larger;
+    color: tomato;
+    transition: 150ms ease-in-out;
+    display: block;
   }
 }

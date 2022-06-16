@@ -1,5 +1,4 @@
 const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
@@ -10,9 +9,10 @@ dotenv.config();
 const port = process.env.PORT;
 const mongoUrl = process.env.MONGO_URL;
 
+const app = express();
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors());
 
 app.use("/api/user", authRouter);
 app.use("/api/event", eventRouter);
