@@ -1,40 +1,46 @@
-# **Bug Tracker Web Application**
+# **Interactive Event creator Web App**
 
-![bugtrack](https://github.com/Raboudi00/G_club/assets/78605723/c7717b47-4f9b-47be-89e8-b509a51b372b)
-
-#### This repository contains a bug tracker web application that allows administrators and employees to assign and track the progress of software bugs found in the system. The application aims to improve performance and productivity in the development department.
-## Features
+![Gclub](https://github.com/Raboudi00/G_club/assets/78605723/d023da74-032c-4024-be84-5807e29c1f7c)
 
 
-    Two types of users: Admins and Employees
-    Admins can assign and track the progress of software bugs
-    Bugs can be sorted by priority
-    Front-end technologies used: ReactJS, Redux Async Thunks, Bootstrap5, Jason Web Token Authentication
-    Back-end technologies used: NodeJS, ExpressJS, MongoDB (Mongoose library)
+## Description
+
+#### This repository contains an interactive and visually appealing web application that allows users to create and share events. The application incorporates various UI/UX implementations and ensures secure authentication and password storage using the JWT authentication process, bcrypt hashing with rounds and salt.
+Technologies Used
+
+    ReactJS: JavaScript library for building user interfaces with state management using form, state, context hooks and making API calls with axios.
+    NodeJS: JavaScript runtime environment for building server-side applications.
+    ExpressJS: Fast, unopinionated, and minimalist web framework for Node.js.
+    MongoDB: NoSQL database used for data storage, accessed using the Mongoose library.
 
 ## Installation
 
-    Clone the repository: 
-    git clone https://github.com/Raboudi00/BugFarm
-    Install the required dependencies: npm install
-    Run the front-end application: npm start
-    Run the back-end server: node server.js
+    Clone the repository: git clone https://github.com/Raboudi00/G_club
+    Navigate to the project directory: cd your-repo
+    Install the dependencies:
+        For the client (ReactJS): cd client && npm install
+        For the server (NodeJS/ExpressJS): cd server && npm install
+    Set up the MongoDB database and provide the connection URL in the server configuration.
+    Start the development server:
+        For the client (ReactJS): cd client && npm start
+        For the server (NodeJS/ExpressJS): cd server && npm start
 
 ## Usage
 
-    Open the application in your preferred web browser by accessing http://localhost:3000.
-    Log in as either an Admin or an Employee using your credentials.
-    As an Admin, you can assign bugs to employees, track their progress, and sort them by priority.
-    As an Employee, you can view the bugs assigned to you and update their status.
+    Open your web browser and navigate to http://localhost:3000.
+    Sign up or log in to access the application.
+    Explore the interface and create/share events with others.
 
 ## Contributing
 
-**If you would like to contribute to this project, follow these steps:**
+Contributions are welcome! If you find a bug or want to add a new feature, please follow these steps:
 
-    Fork the repository
-    Create a new branch: git checkout -b feature/your-feature
-    Make the necessary changes and commit them: git commit -m 'Add your feature'
-    Push your changes to the branch: git push origin feature/your-feature
-    Submit a pull request
+    Fork the repository.
+    Create a new branch: git checkout -b feature-branch
+    Make your changes and commit them: git commit -m 'Add some feature'
+    Push to the branch: git push origin feature-branch
+    Create a pull request, describing your changes in detail.
 
-This project is created by Oussama Raboudi: raboudi_oussama@outlook.com
+## Contact
+
+For any inquiries or suggestions, please feel free to contact me at raboudi_oussama@outlook.com
